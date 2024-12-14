@@ -25,11 +25,15 @@ export default async function BillingPage() {
 
   return (
     <>
-      <DashboardHeader
-        heading="Billing"
-        text="Manage billing and your subscription plan."
+       <DashboardHeader
+        heading="Billings"
+        breadcrumbs={[
+          { label: "Dashboard", href: "/dashboard" },
+          { label: "Billings" },
+        ]}
       />
-      <div className="grid gap-8">
+
+      <div className="grid gap-8 p-4">
         <Alert className="!pl-14">
           <Icons.warning />
           <AlertTitle>This is a demo app.</AlertTitle>

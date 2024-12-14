@@ -109,7 +109,6 @@ export function NavBar({ scroll = false }: NavBarProps) {
                 className="gap-2 px-5"
                 variant="default"
                 size="sm"
-                rounded="full"
               >
                 <span>Dashboard</span>
               </Button>
@@ -119,7 +118,6 @@ export function NavBar({ scroll = false }: NavBarProps) {
               className="hidden gap-2 px-5 md:flex"
               variant="default"
               size="sm"
-              rounded="full"
               onClick={() => setShowSignInModal(true)}
             >
               <span>Sign In</span>

@@ -21,9 +21,13 @@ export default async function SettingsPage() {
     <>
       <DashboardHeader
         heading="Settings"
-        text="Manage account and website settings."
+        breadcrumbs={[
+          { label: "Dashboard", href: "/dashboard" },
+          { label: "Settings" },
+        ]}
       />
-      <div className="divide-y divide-muted pb-10">
+      
+      <div className="divide-y divide-muted p-4 pb-10">
         <UserNameForm user={{ id: user.id, name: user.name || "" }} />
         <UserRoleForm user={{ id: user.id, role: user.role }} />
         <DeleteAccountSection />

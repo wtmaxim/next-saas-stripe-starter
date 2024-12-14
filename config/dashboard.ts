@@ -1,54 +1,45 @@
 import { UserRole } from "@prisma/client";
+import { BookOpen, DollarSign, Home, Laptop, LayoutDashboard, LineChart, MessageCircle, Notebook, Package, Settings } from "lucide-react";
 
-import { SidebarNavItem } from "types";
-
-export const sidebarLinks: SidebarNavItem[] = [
-  {
-    title: "MENU",
-    items: [
-      {
-        href: "/admin",
-        icon: "laptop",
-        title: "Admin Panel",
-        authorizeOnly: UserRole.ADMIN,
-      },
-      { href: "/dashboard", icon: "dashboard", title: "Dashboard" },
-      {
-        href: "/dashboard/billing",
-        icon: "billing",
-        title: "Billing",
-        authorizeOnly: UserRole.USER,
-      },
-      { href: "/dashboard/charts", icon: "lineChart", title: "Charts" },
-      {
-        href: "/admin/orders",
-        icon: "package",
-        title: "Orders",
-        badge: 2,
-        authorizeOnly: UserRole.ADMIN,
-      },
-      {
-        href: "#/dashboard/posts",
-        icon: "post",
-        title: "User Posts",
-        authorizeOnly: UserRole.USER,
-        disabled: true,
-      },
-    ],
-  },
-  {
-    title: "OPTIONS",
-    items: [
-      { href: "/dashboard/settings", icon: "settings", title: "Settings" },
-      { href: "/", icon: "home", title: "Homepage" },
-      { href: "/docs", icon: "bookOpen", title: "Documentation" },
-      {
-        href: "#",
-        icon: "messages",
-        title: "Support",
-        authorizeOnly: UserRole.USER,
-        disabled: true,
-      },
-    ],
-  },
-];
+export const sidebarLinks = {
+  menu: [
+    {
+      title: "Admin Panel",
+      url: "/admin",
+      icon: Laptop,
+      isActive: true,
+      authorizeOnly: UserRole.ADMIN,
+    },
+    { url: "/dashboard", icon: LayoutDashboard, title: "Dashboard" },
+    {
+      url: "/dashboard/billing",
+      icon: DollarSign,
+      title: "Billing",
+      authorizeOnly: UserRole.USER,
+    },
+    {
+      url: "/dashboard/charts",
+      icon: LineChart,
+      title: "Charts"
+    },
+    {
+      url: "/admin/orders",
+      icon: Package,
+      title: "Orders",
+      badge: 2,
+      authorizeOnly: UserRole.ADMIN,
+    }
+  ],
+  options: [
+    { url: "/dashboard/settings", icon: Settings, title: "Settings" },
+    { url: "/", icon: Home, title: "Homepage" },
+    { url: "/docs", icon:  BookOpen, title: "Documentation" },
+    {
+      url: "#",
+      icon: MessageCircle,
+      title: "Support",
+      authorizeOnly: UserRole.USER,
+      disabled: true,
+    },
+  ]
+}

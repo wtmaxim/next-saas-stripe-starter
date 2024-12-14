@@ -19,6 +19,10 @@ export const sendVerificationRequest: EmailConfig["sendVerificationRequest"] =
       ? `Sign-in link for ${siteConfig.name}`
       : "Activate your account";
 
+      if (!provider.from) {
+        throw new Error("The 'from' email address is required but was not provided.");
+      }
+    
     try {
       const { data, error } = await resend.emails.send({
         from: provider.from,

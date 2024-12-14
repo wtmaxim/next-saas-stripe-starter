@@ -17,18 +17,25 @@ export default async function OrdersPage() {
 
   return (
     <>
+
       <DashboardHeader
-        heading="Orders"
-        text="Check and manage your latest orders."
+        heading="My Orders"
+        breadcrumbs={[
+          { label: "Admin", href: "/admin" },
+          { label: "Orders" },
+        ]}
       />
-      <EmptyPlaceholder>
-        <EmptyPlaceholder.Icon name="package" />
-        <EmptyPlaceholder.Title>No orders listed</EmptyPlaceholder.Title>
-        <EmptyPlaceholder.Description>
-          You don&apos;t have any orders yet. Start ordering a product.
-        </EmptyPlaceholder.Description>
-        <Button>Buy Products</Button>
-      </EmptyPlaceholder>
+
+      <div className="flex h-full p-4">
+        <EmptyPlaceholder>
+          <EmptyPlaceholder.Icon name="package" />
+          <EmptyPlaceholder.Title>No orders listed</EmptyPlaceholder.Title>
+          <EmptyPlaceholder.Description>
+            You don&apos;t have any orders yet. Start ordering a product.
+          </EmptyPlaceholder.Description>
+          <Button>Buy Products</Button>
+        </EmptyPlaceholder>
+      </div>
     </>
   );
 }

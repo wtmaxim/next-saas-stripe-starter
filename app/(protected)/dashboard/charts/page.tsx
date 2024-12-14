@@ -1,6 +1,6 @@
 import { constructMetadata } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
-import { AreaChartStacked } from "@/components/charts/area-chart-stacked";
+// import { AreaChartStacked } from "@/components/charts/area-chart-stacked";
 import { BarChartMixed } from "@/components/charts/bar-chart-mixed";
 import { InteractiveBarChart } from "@/components/charts/interactive-bar-chart";
 import { LineChartMultiple } from "@/components/charts/line-chart-multiple";
@@ -19,11 +19,18 @@ export const metadata = constructMetadata({
 export default function ChartsPage() {
   return (
     <>
-      <DashboardHeader heading="Charts" text="List of charts by shadcn-ui." />
-      <div className="flex flex-col gap-5">
+      <DashboardHeader
+        heading="My Dashboard"
+        breadcrumbs={[
+          { label: "Dashboard", href: "/dashboard" },
+          { label: "Charts" },
+        ]}
+      />
+
+      <div className="flex flex-col gap-5 p-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:grid-cols-4">
           <RadialTextChart />
-          <AreaChartStacked />
+          {/* <AreaChartStacked /> */}
           <BarChartMixed />
           <RadarChartSimple />
         </div>
